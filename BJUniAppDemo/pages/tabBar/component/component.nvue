@@ -1,13 +1,5 @@
 <template>
 	<view class="uni-container">
-		<view v-if="!hasLeftWin" class="uni-header-logo">
-			<image class="uni-header-image" src="/static/componentIndex.png"></image>
-		</view>
-		<view v-if="!hasLeftWin" class="uni-hello-text">
-			<text class="hello-text">uni-app内置组件，展示样式仅供参考，文档详见：</text>
-			<u-link class="hello-link" :href="'https://uniapp.dcloud.io/component/'" :text="'https://uniapp.dcloud.io/component/'"
-			 :inWhiteList="true"></u-link>
-		</view>
 		<view class="uni-panel" v-for="(item, index) in list" :key="item.id">
 			<view class="uni-panel-h" :class="item.open ? 'uni-panel-h-on' : ''" @click="triggerCollapse(index, item.id)">
 				<text class="uni-panel-text">{{item.name}}</text>
@@ -26,11 +18,11 @@
 <script>
 	// TODO 修复Android v3 加载过慢问题
 	// #ifdef APP-PLUS
-	var domModule = weex.requireModule('dom');
-	domModule.addRule('fontFace', {
-		'fontFamily': "uniicons",
-		'src': "url('/static/uni.ttf')"
-	});
+	// var domModule = weex.requireModule('dom');
+	// domModule.addRule('fontFace', {
+	// 	'fontFamily': "uniicons",
+	// 	'src': "url('/static/uni.ttf')"
+	// });
 	// #endif
 	export default {
 		props: {
@@ -93,7 +85,6 @@
 						name: '地图',
 						open: false,
 						pages: ['map']
-
 					},
 					// #endif
 					// #ifndef QUICKAPP-WEBVIEW-UNION
@@ -134,6 +125,284 @@
 						open: false
 					},
 					// #endif
+					{
+						id: 'ext-ui',
+						name: '---扩展插件---',
+						open: false,
+						pages: [{
+							name: "uni-badge 数字角标",
+							url: "badge"
+						},
+						// {
+						// 	name: "uni-calendar 日历",
+						// 	url: "calendar"
+						// },
+						{
+							name: "uni-card 卡片",
+							url: "card"
+						},
+						{
+							name: "uni-collapse 折叠面板",
+							url: "collapse"
+						},
+						// #ifndef APP-NVUE 
+						{
+							name: "uni-combox 组合框",
+							url: "combox"
+						},
+						// #endif 
+						{
+							name: "uni-countdown 倒计时",
+							url: "countdown"
+						},
+						{
+							name: "uni-data-checkbox 数据选择器",
+							url: "data-checkbox"
+						},
+						{
+							name: "uni-data-picker 数据驱动的picker选择器",
+							url: "data-picker"
+						},
+						{
+							name: "uni-dateformat 日期格式化",
+							url: "dateformat"
+						},
+						{
+							name: "uni-datetime-picker 日期选择器",
+							url: "datetime-picker"
+						},
+						{
+							name: "uni-drawer 抽屉",
+							url: "drawer"
+						},
+						{
+							name: "uni-easyinput 增强输入框",
+							url: "easyinput"
+						},
+						{
+							name: "uni-fab 悬浮按钮",
+							url: "fab"
+						},
+						{
+							name: "uni-fav 收藏按钮",
+							url: "fav"
+						},
+						// #ifndef APP-NVUE 
+						{
+							name: "uni-file-picker 文件选择上传",
+							url: "file-picker"
+						},
+						// #endif 
+						{
+							name: "uni-forms 表单",
+							url: "forms"
+						},
+						{
+							name: "uni-goods-nav 商品导航",
+							url: "goods-nav"
+						},
+						{
+							name: "uni-grid 宫格",
+							url: "grid"
+						},
+						{
+							name: "uni-group 分组",
+							url: "group"
+						},
+						{
+							name: "uni-icons 图标",
+							url: "icons"
+						},
+						{
+							name: "uni-indexed-list 索引列表",
+							url: "indexed-list"
+						},
+						{
+							name: "uni-link 超链接",
+							url: "link"
+						},
+						{
+							name: "uni-list 列表",
+							url: "list"
+						},
+						// #ifndef MP-JD
+						{
+							name: "uni-load-more 加载更多",
+							url: "load-more"
+						},
+						// #endif
+						{
+							name: "uni-nav-bar 自定义导航栏",
+							url: "nav-bar"
+						},
+						{
+							name: "uni-notice-bar 通告栏",
+							url: "notice-bar"
+						},
+						{
+							name: "uni-number-box 数字输入框",
+							url: "number-box"
+						},
+						{
+							name: "uni-pagination 分页器",
+							url: "pagination"
+						},
+						{
+							name: "uni-popup 弹出层",
+							url: "popup"
+						},
+						{
+							name: "uni-rate 评分",
+							url: "rate"
+						},
+						{
+							name: "uni-row 布局-行",
+							url: "row"
+						},
+						{
+							name: "uni-search-bar 搜索栏",
+							url: "search-bar"
+						},
+						// #ifndef APP || H5 || MP-WEIXIN || MP-ALIPAY || MP-BAIDU || MP-TOUTIAO || MP-QQ 
+						{
+							name: "section 标题栏",
+							url: "section"
+						},
+						// #endif 
+						{
+							name: "uni-segmented-control 分段器",
+							url: "segmented-control"
+						},
+						{
+							name: "uni-steps 步骤条",
+							url: "steps"
+						},
+						{
+							name: "uni-swipe-action 滑动操作",
+							url: "swipe-action"
+						},
+						{
+							name: "uni-swiper-dot 轮播图指示点",
+							url: "swiper-dot"
+						},
+						// #ifndef APP-NVUE || MP-TOUTIAO || MP-BAIDU
+						{
+							name: "uni-table 表格",
+							url: "table"
+						},
+						// #endif 
+						{
+							name: "uni-tag 标签",
+							url: "tag"
+						},
+						{
+							name: "uni-title 章节标题",
+							url: "title"
+						},
+						{
+							name: "uni-transition 过渡动画",
+							url: "transition"
+						}]
+					},
+					// #ifdef APP-PLUS || H5 || MP-ALIPAY
+					{
+						id: 'navbar',
+						name: '顶部原生导航标题栏',
+						open: false,
+						pages: [
+							// #ifdef APP-PLUS || H5
+							{
+								name: '导航栏带自定义按钮',
+								url: 'nav-button'
+							},
+							{
+								name: '导航栏带红点和角标',
+								url: 'nav-dot'
+							},
+							{
+								name: '导航栏带城市选择',
+								url: 'nav-city-dropdown'
+							},
+							{
+								name: '导航栏带搜索框',
+								url: 'nav-search-input'
+							},
+							// #endif
+							// #ifdef APP-PLUS || H5 || MP-ALIPAY
+							{
+								name: '透明渐变样式',
+								url: 'nav-transparent'
+							},
+							{
+								name: '导航栏带图片',
+								url: 'nav-image'
+							}
+							// #endif
+						]
+					},
+					{
+						id: 'other',
+						name: '其他',
+						open: false,
+						pages: [
+							// #ifndef QUICKAPP-WEBVIEW || MP-KUAISHOU
+							{
+								name: '顶部选项卡',
+								url: 'tabbar'
+							},
+							// #endif
+							{
+								name: '组件通讯',
+								url: 'component-communication'
+							},
+							// #ifndef MP-QQ || QUICKAPP-WEBVIEW
+							// {
+							// 	name: 'uCharts 图表',
+							// 	url: 'ucharts'
+							// },
+							// #endif
+							// #ifndef QUICKAPP-WEBVIEW
+							{
+								name: '列表到详情示例',
+								url: 'list2detail-list'
+							},
+							// #endif
+							// #ifndef VUE3
+							// #ifdef APP-PLUS
+							// {
+							// 	name: '上下滑动切换视频',
+							// 	url: 'swiper-vertical'
+							// },
+							// #endif
+							// #endif
+							// #ifdef APP-NVUE
+							{
+								name: 'swiper-list',
+								url: 'swiper-list-nvue'
+							},
+							// #endif
+							{
+								name: 'GlobalData和vuex',
+								url: 'global'
+							},
+							// #ifdef APP-PLUS
+							{
+								name: '问题反馈',
+								url: '/platforms/app-plus/feedback/feedback'
+							},
+							{
+								name: '打开外部应用',
+								url: 'scheme'
+							}
+							// #endif
+							// #ifdef APP-PLUS || MP-WEIXIN || MP-QQ || H5
+							// {
+							// 	name: '微信自定义组件示例（vant ui）',
+							// 	url: 'vant-button'
+							// }
+							// #endi
+						]
+					}
 				]
 			}
 		},
@@ -184,6 +453,17 @@
 				}
 			},
 			goDetailPage(panel, e) {
+				
+				console.log(panel, e)
+				// 扩展插件
+				if (panel === 'ext-ui') {
+					const url = '/pages/extUI/' + e.url + '/' + e.url
+					console.log(url)
+					uni.navigateTo({
+						url: url
+					})
+				}
+				
 				if (typeof e === 'string') {
 					const url = '/pages/component/' + e + '/' + e
 					if (this.hasLeftWin) {

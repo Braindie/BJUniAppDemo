@@ -16,7 +16,7 @@
 		{
 			"path": "pages/tabBar/component/component",
 			"style": {
-				"navigationBarTitleText": "内置组件",
+				"navigationBarTitleText": "Layout",
 				"app-plus": {
 					"bounce": "vertical",
 					"titleNView": {
@@ -31,9 +31,25 @@
 			}
 		},
 		{
+			"path": "pages/tabBar/extUI/extUI",
+			"style": {
+				"navigationBarTitleText": "Draw",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/tabBar/API/API",
 			"style": {
-				"navigationBarTitleText": "接口",
+				"navigationBarTitleText": "Data",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -49,7 +65,7 @@
 		{
 			"path": "pages/tabBar/template/template",
 			"style": {
-				"navigationBarTitleText": "模版",
+				"navigationBarTitleText": "Frame",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -63,9 +79,9 @@
 			}
 		},
 		{
-			"path": "pages/tabBar/extUI/extUI",
+			"path": "pages/tabBar/func/func",
 			"style": {
-				"navigationBarTitleText": "扩展组件",
+				"navigationBarTitleText": "Func",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -332,7 +348,25 @@
 			}
 		}
 		// #endif
-	],
+	    ,{
+            "path" : "pages/tabBar/Func/func/func",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabBar/func/func",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pages/API",
 			"pages": [{
@@ -1315,23 +1349,27 @@
 				"pagePath": "pages/tabBar/component/component",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
-				"text": "内置组件"
-			},
-			{
-				"pagePath": "pages/tabBar/API/API",
-				"iconPath": "static/api.png",
-				"selectedIconPath": "static/apiHL.png",
-				"text": "接口"
-			}, {
-				"pagePath": "pages/tabBar/extUI/extUI",
-				"iconPath": "static/extui.png",
-				"selectedIconPath": "static/extuiHL.png",
-				"text": "扩展组件"
+				"text": "Layout"
 			}, {
 				"pagePath": "pages/tabBar/template/template",
 				"iconPath": "static/template.png",
 				"selectedIconPath": "static/templateHL.png",
-				"text": "模板"
+				"text": "Draw"
+			}, {
+				"pagePath": "pages/tabBar/API/API",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/apiHL.png",
+				"text": "Data"
+			}, {
+				"pagePath": "pages/tabBar/extUI/extUI",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
+				"text": "Frame"
+			}, {
+				"pagePath": "pages/tabBar/func/func",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "Func"
 			}
 		]
 	}
