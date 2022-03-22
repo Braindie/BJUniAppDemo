@@ -348,15 +348,6 @@
 			}
 		}
 		// #endif
-	    ,{
-            "path" : "pages/tabBar/Func/func/func",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
         ,{
             "path" : "pages/tabBar/func/func",
             "style" :                                                                                    
@@ -751,7 +742,7 @@
 			]
 		},
 		{
-			"root": "pages/extUI",
+			"root": "pages/component",
 			"pages": [{
 					"path": "forms/forms",
 					"style": {
@@ -1070,7 +1061,7 @@
 					}
 				},
 				{
-					"path": "button/button",
+					"path": "btn/button",
 					"style": {
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false
@@ -1079,7 +1070,7 @@
 			]
 		},
 		{
-			"root": "pages/template",
+			"root": "pages/component",
 			"pages": [
 				// #ifndef VUE3
 				{
@@ -1351,9 +1342,9 @@
 				"selectedIconPath": "static/componentHL.png",
 				"text": "Layout"
 			}, {
-				"pagePath": "pages/tabBar/template/template",
-				"iconPath": "static/template.png",
-				"selectedIconPath": "static/templateHL.png",
+				"pagePath": "pages/tabBar/extUI/extUI",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
 				"text": "Draw"
 			}, {
 				"pagePath": "pages/tabBar/API/API",
@@ -1361,9 +1352,9 @@
 				"selectedIconPath": "static/apiHL.png",
 				"text": "Data"
 			}, {
-				"pagePath": "pages/tabBar/extUI/extUI",
-				"iconPath": "static/extui.png",
-				"selectedIconPath": "static/extuiHL.png",
+				"pagePath": "pages/tabBar/template/template",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
 				"text": "Frame"
 			}, {
 				"pagePath": "pages/tabBar/func/func",

@@ -42,9 +42,8 @@
 						pages: [
 							'view',
 							'scroll-view',
-							'swiper'
+							'swiper',
 							// #ifndef MP-TOUTIAO || MP-LARK
-							,
 							'movable-view',
 							'cover-view'
 							// #endif
@@ -307,7 +306,7 @@
 					// #ifdef APP-PLUS || H5 || MP-ALIPAY
 					{
 						id: 'navbar',
-						name: '顶部原生导航标题栏',
+						name: '模板-顶部原生导航标题栏',
 						open: false,
 						pages: [
 							// #ifdef APP-PLUS || H5
@@ -340,9 +339,10 @@
 							// #endif
 						]
 					},
+					// #endif
 					{
-						id: 'other',
-						name: '其他',
+						id: 'template',
+						name: '模板-其他',
 						open: false,
 						pages: [
 							// #ifndef QUICKAPP-WEBVIEW || MP-KUAISHOU
@@ -367,13 +367,11 @@
 								url: 'list2detail-list'
 							},
 							// #endif
-							// #ifndef VUE3
 							// #ifdef APP-PLUS
 							// {
 							// 	name: '上下滑动切换视频',
 							// 	url: 'swiper-vertical'
 							// },
-							// #endif
 							// #endif
 							// #ifdef APP-NVUE
 							{
@@ -400,7 +398,7 @@
 							// 	name: '微信自定义组件示例（vant ui）',
 							// 	url: 'vant-button'
 							// }
-							// #endi
+							// #endif
 						]
 					}
 				]
@@ -457,13 +455,28 @@
 				console.log(panel, e)
 				// 扩展插件
 				if (panel === 'ext-ui') {
-					const url = '/pages/extUI/' + e.url + '/' + e.url
+					const url = '/pages/component/' + e.url + '/' + e.url
 					console.log(url)
 					uni.navigateTo({
 						url: url
 					})
 				}
-				
+				// 模板
+				if (panel === 'template') {
+					const url = '/pages/component/' + e.url + '/' + e.url
+					console.log(url)
+					uni.navigateTo({
+						url: url
+					})
+				}
+				if (panel === 'navbar') {
+					const url = '/pages/component/' + e.url + '/' + e.url
+					console.log(url)
+					uni.navigateTo({
+						url: url
+					})
+				}
+				// 组件
 				if (typeof e === 'string') {
 					const url = '/pages/component/' + e + '/' + e
 					if (this.hasLeftWin) {
