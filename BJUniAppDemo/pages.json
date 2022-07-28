@@ -5,7 +5,7 @@
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
-				"pagePath": "pages/tabBar/component/component",
+				"pagePath": "pages/tabBar/layout/layout",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
 				"text": "Layout"
@@ -47,7 +47,7 @@
 	"pages": [
 		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/tabBar/component/component",
+			"path": "pages/tabBar/layout/layout",
 			"style": {
 				"navigationBarTitleText": "Layout",
 				"app-plus": {
@@ -383,6 +383,24 @@
 		// #endif
         ,{
             "path" : "pages/tabBar/func/func",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabBar/layout/swiper_video/swiper_video",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tabBar/layout/layout",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
