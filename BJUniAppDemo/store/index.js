@@ -22,9 +22,13 @@ const store = createStore({
 		leftWinActive: '/pages/component/view/view',
 		activeOpen: '',
 		menu: [],
-		univerifyErrorMsg: ''
+		univerifyErrorMsg: '',
+		count: 0
 	},
 	mutations: {
+		increment(state) {
+			state.count = 10
+		},
 		login(state, provider) {
 			state.hasLogin = true;
 			state.loginProvider = provider;

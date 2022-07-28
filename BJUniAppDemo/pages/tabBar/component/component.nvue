@@ -16,6 +16,8 @@
 	</view>
 </template>
 <script>
+	
+	import mixin from '@/mixin/mixin.js'
 	// TODO 修复Android v3 加载过慢问题
 	// #ifdef APP-PLUS
 	// var domModule = weex.requireModule('dom');
@@ -33,6 +35,7 @@
 				type: String
 			}
 		},
+		mixins: [mixin],
 		data() {
 			return {
 				list: [{
@@ -451,6 +454,8 @@
 				}
 			},
 			goDetailPage(panel, e) {
+				
+				this.share()
 				
 				console.log(panel, e)
 				// 扩展插件

@@ -1,4 +1,37 @@
 {
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/component/component",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "Layout"
+			}, {
+				"pagePath": "pages/tabBar/extUI/extUI",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
+				"text": "Draw"
+			}, {
+				"pagePath": "pages/tabBar/API/API",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/apiHL.png",
+				"text": "Data"
+			}, {
+				"pagePath": "pages/tabBar/template/template",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "Frame"
+			}, {
+				"pagePath": "pages/tabBar/func/func",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "Func"
+			}
+		]
+	},
 	"leftWindow": {
 		"path": "windows/left-window.vue",
 		"style": {
@@ -1330,38 +1363,5 @@
 			"navigationBarBackgroundColor": "#F1F1F1"
 		}
 
-	},
-	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
-		"borderStyle": "black",
-		"backgroundColor": "#F8F8F8",
-		"list": [{
-				"pagePath": "pages/tabBar/component/component",
-				"iconPath": "static/component.png",
-				"selectedIconPath": "static/componentHL.png",
-				"text": "Layout"
-			}, {
-				"pagePath": "pages/tabBar/extUI/extUI",
-				"iconPath": "static/extui.png",
-				"selectedIconPath": "static/extuiHL.png",
-				"text": "Draw"
-			}, {
-				"pagePath": "pages/tabBar/API/API",
-				"iconPath": "static/api.png",
-				"selectedIconPath": "static/apiHL.png",
-				"text": "Data"
-			}, {
-				"pagePath": "pages/tabBar/template/template",
-				"iconPath": "static/template.png",
-				"selectedIconPath": "static/templateHL.png",
-				"text": "Frame"
-			}, {
-				"pagePath": "pages/tabBar/func/func",
-				"iconPath": "static/template.png",
-				"selectedIconPath": "static/templateHL.png",
-				"text": "Func"
-			}
-		]
 	}
 }

@@ -9,7 +9,7 @@
 				<textarea :value="res"></textarea>
 			</view>
 			<view class="uni-btn-v uni-common-mt">
-				<button type="primary" @click="sendRequest" :loading="loading">发起请求（Callback）</button>
+				<button type="primary" @click="sendRequest('default')" :loading="loading">发起请求（Callback）</button>
 				<button type="primary" @click="sendRequest('promise')" :loading="loading">发起请求（Promise）</button>
 				<button type="primary" @click="sendRequest('await')" :loading="loading">发起请求（Async/Await）</button>
 			</view>
@@ -17,6 +17,7 @@
 	</view>
 </template>
 <script>
+	// const requestUrl = 'https://www.baidu.com'
 	const requestUrl = 'https://unidemo.dcloud.net.cn/ajax/echo/text?name=uni-app'
 	const duration = 2000
 	export default {
@@ -31,6 +32,9 @@
 			sendRequest(mode) {
 				this.loading = true;
 				switch (mode) {
+					case 'default':
+						this._request();
+						break;
 					case 'promise':
 						this._requestPromise();
 						break;
@@ -38,69 +42,102 @@
 						this._requestAwait();
 						break;
 					default:
-						this._request();
 						break;
 				}
 			},
+			// callback 写法
 			_request() {
+				// uni.request({
+				// 	url: requestUrl,
+				// 	dataType: 'text',
+				// 	data: {
+				// 		noncestr: Date.now()
+				// 	},
+				// 	success: (res) => {
+				// 		console.log('request success', res)
+				// 		uni.showToast({
+				// 			title: '请求成功',
+				// 			icon: 'success',
+				// 			mask: true,
+				// 			duration: duration
+				// 		});
+				// 		this.res = '请求结果 : ' + JSON.stringify(res);
+				// 	},
+				// 	fail: (err) => {
+				// 		console.log('request fail', err);
+				// 		uni.showModal({
+				// 			content: err.errMsg,
+				// 			showCancel: false
+				// 		});
+				// 	},
+				// 	complete: () => {
+				// 		this.loading = false;
+				// 	}
+				// });
 				uni.request({
 					url: requestUrl,
 					dataType: 'text',
 					data: {
-						noncestr: Date.now()
+						id: 'hello'
 					},
 					success: (res) => {
-						console.log('request success', res)
-						uni.showToast({
-							title: '请求成功',
-							icon: 'success',
-							mask: true,
-							duration: duration
-						});
-						this.res = '请求结果 : ' + JSON.stringify(res);
+						console.log('请求成功', res)
 					},
 					fail: (err) => {
-						console.log('request fail', err);
-						uni.showModal({
-							content: err.errMsg,
-							showCancel: false
-						});
+						console.log('请求失败', err)
 					},
 					complete: () => {
-						this.loading = false;
+						this.loading = false
+						console.log('请求完成')
 					}
-				});
+				})
+				
 			},
+			
+			// promise 写法
 			_requestPromise() {
 				// #ifndef VUE3
-				uni.request({
-					url: requestUrl,
-					dataType: 'text',
-					data: {
-						noncestr: Date.now()
-					}
-				}).then(res => {
-					console.log('request success', res[1]);
-					uni.showToast({
-						title: '请求成功',
-						icon: 'success',
-						mask: true,
-						duration: duration
-					});
-					this.res = '请求结果 : ' + JSON.stringify(res[1]);
-					this.loading = false;
-				}).catch(err => {
-					console.log('request fail', err);
-					uni.showModal({
-						content: err.errMsg,
-						showCancel: false
-					});
+				// uni.request({
+				// 	url: requestUrl,
+				// 	dataType: 'text',
+				// 	data: {
+				// 		noncestr: Date.now()
+				// 	}
+				// }).then(res => {
+				// 	console.log('request success', res[1]);
+				// 	uni.showToast({
+				// 		title: '请求成功',
+				// 		icon: 'success',
+				// 		mask: true,
+				// 		duration: duration
+				// 	});
+				// 	this.res = '请求结果 : ' + JSON.stringify(res[1]);
+				// 	this.loading = false;
+				// }).catch(err => {
+				// 	console.log('request fail', err);
+				// 	uni.showModal({
+				// 		content: err.errMsg,
+				// 		showCancel: false
+				// 	});
 
-					this.loading = false;
-				});
+				// 	this.loading = false;
+				// });
+				// console.log('vue2')
 				// #endif
+				
+				// uni.request({
+				// 	url: requestUrl,
+				// 	dataType: 'text',
+				// 	data: {
+				// 		hello: 'hi'
+				// 	}
+				// }).then(res => {
+					
+				// }).catch(error => {
+					
+				// });
 
-				// #ifdef VUE3
+				// #ifndef VUE3
 				uni.request({
 					url: requestUrl,
 					dataType: 'text',
@@ -116,7 +153,7 @@
 						duration: duration
 					});
 					this.res = '请求结果 : ' + JSON.stringify(res);
-
+				
 					this.loading = false;
 				}).catch(err => {
 					console.log('request fail', err);
@@ -124,10 +161,12 @@
 						content: err.errMsg,
 						showCancel: false
 					});
-
+				
 					this.loading = false;
 				});
 				// #endif
+
+
 			},
 			async _requestAwait() {
 				let res, err

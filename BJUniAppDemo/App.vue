@@ -26,21 +26,24 @@
 			}
 
 			// 一键登录预登陆，可以显著提高登录速度
-			uni.preLogin({
-				provider: 'univerify',
-				success: (res) => {
-					// 成功
-					this.setUniverifyErrorMsg();
-					console.log("preLogin success: ", res);
-				},
-				fail: (res) => {
-					this.setUniverifyLogin(false);
-					this.setUniverifyErrorMsg(res.errMsg);
-					// 失败
-					console.log("preLogin fail res: ", res);
-				}
-			})
+			// uni.preLogin({
+			// 	provider: 'univerify',
+			// 	success: (res) => {
+			// 		// 成功
+			// 		this.setUniverifyErrorMsg();
+			// 		console.log("preLogin success: ", res);
+			// 	},
+			// 	fail: (res) => {
+			// 		this.setUniverifyLogin(false);
+			// 		this.setUniverifyErrorMsg(res.errMsg);
+			// 		// 失败
+			// 		console.log("preLogin fail res: ", res);
+			// 	}
+			// })
 			// #endif
+			
+			this.increment()
+			console.log(this.$store.state.count)
 		},
 		onShow: function() {
 			console.log('App Show')
@@ -52,7 +55,7 @@
 			test: ''
 		},
 		methods: {
-			...mapMutations(['setUniverifyErrorMsg', 'setUniverifyLogin'])
+			...mapMutations(['setUniverifyErrorMsg', 'setUniverifyLogin', 'increment']) // 通过负责函数映射为 store.commit
 		}
 	}
 </script>
