@@ -391,15 +391,6 @@
             
         }
         ,{
-            "path" : "pages/tabBar/layout/swiper_video/swiper_video",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/tabBar/layout/layout",
             "style" :                                                                                    
             {
