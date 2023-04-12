@@ -5,27 +5,27 @@
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
-				"pagePath": "pages/tabBar/layout/layout",
+				"pagePath": "pages/layout/layout",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
 				"text": "Layout"
 			}, {
-				"pagePath": "pages/tabBar/extUI/extUI",
+				"pagePath": "pages/draw/draw",
 				"iconPath": "static/extui.png",
 				"selectedIconPath": "static/extuiHL.png",
 				"text": "Draw"
 			}, {
-				"pagePath": "pages/tabBar/API/API",
+				"pagePath": "pages/data/data",
 				"iconPath": "static/api.png",
 				"selectedIconPath": "static/apiHL.png",
 				"text": "Data"
 			}, {
-				"pagePath": "pages/tabBar/template/template",
+				"pagePath": "pages/frame/frame",
 				"iconPath": "static/template.png",
 				"selectedIconPath": "static/templateHL.png",
 				"text": "Frame"
 			}, {
-				"pagePath": "pages/tabBar/func/func",
+				"pagePath": "pages/func/func",
 				"iconPath": "static/template.png",
 				"selectedIconPath": "static/templateHL.png",
 				"text": "Func"
@@ -47,7 +47,7 @@
 	"pages": [
 		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/tabBar/layout/layout",
+			"path": "pages/layout/layout",
 			"style": {
 				"navigationBarTitleText": "Layout",
 				"app-plus": {
@@ -64,7 +64,7 @@
 			}
 		},
 		{
-			"path": "pages/tabBar/extUI/extUI",
+			"path": "pages/draw/draw",
 			"style": {
 				"navigationBarTitleText": "Draw",
 				"app-plus": {
@@ -80,7 +80,7 @@
 			}
 		},
 		{
-			"path": "pages/tabBar/API/API",
+			"path": "pages/data/data",
 			"style": {
 				"navigationBarTitleText": "Data",
 				"app-plus": {
@@ -96,7 +96,7 @@
 			}
 		},
 		{
-			"path": "pages/tabBar/template/template",
+			"path": "pages/frame/frame",
 			"style": {
 				"navigationBarTitleText": "Frame",
 				"app-plus": {
@@ -112,7 +112,7 @@
 			}
 		},
 		{
-			"path": "pages/tabBar/func/func",
+			"path": "pages/func/func",
 			"style": {
 				"navigationBarTitleText": "Func",
 				"app-plus": {
@@ -125,6 +125,12 @@
 						}]
 					}
 				}
+			}
+		},
+		{
+			"path": "pages/layout/nvuePage",
+			"style": {
+				"navigationBarTitleText": "view"
 			}
 		},
 		{
